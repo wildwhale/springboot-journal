@@ -1,6 +1,7 @@
 package com.apress.spring.web;
 
 import com.apress.spring.domain.Journal;
+import com.apress.spring.domain.JournalEntry;
 import com.apress.spring.repository.JournalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -24,7 +25,7 @@ public class JournalController {
     }
 
     @RequestMapping(value = "/journal", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public @ResponseBody List<Journal> getJournal() {
+    public @ResponseBody List<JournalEntry> getJournal() {
         return repo.findAll();
     }
 }
